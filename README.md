@@ -181,10 +181,11 @@ code/
 ## Team
 
 ### Team 4, Spring 2025
-- Arshiya Noureen
+- Shreyas Deb
 - Sanyam Agarwal
 - Kushal Mangla
 - Vishak Kashyap
-- Shreyas Deb
+- Arshiya Noureen
+
 
 

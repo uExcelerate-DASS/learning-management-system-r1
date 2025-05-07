@@ -1,5 +1,6 @@
 # Ignore environment and dependencies
 venv/
+myenv/
 node_modules/
 .env
 
@@ -11,8 +12,3 @@ __pycache__/
 logs/
 *.log
 debug.log
-
-# Ignore build files
-build/
-dist/
-*.egg-info/

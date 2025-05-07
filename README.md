@@ -99,13 +99,49 @@ cd api
 uvicorn main:app --reload
 ```
 
-
-
-
 ## API Documentation
 
-- **Backend API**: Available at `http://localhost:8080/api-docs` when the server is running
-- **Recommendation API**: Available at `http://localhost:8000/docs` when the FastAPI server is running
+### Backend API
+
+The backend server exposes the following REST API endpoints:
+
+#### Authentication API
+- **POST** `/api/auth/login`: User login
+- **POST** `/api/auth/register`: User registration
+- **POST** `/api/auth/validate`: Validate authentication token
+
+#### User API
+- **GET** `/api/users/profile`: Get current user profile
+- **PUT** `/api/users/profile`: Update user profile
+- **PUT** `/api/users/preferences`: Update user preferences
+- **GET** `/api/users/learners/:learnerId/progress`: Get specific learner's progress
+- **DELETE** `/api/users/profile`: Delete user account
+- **GET** `/api/users/course/:courseId`: Get course details and contents
+- **GET** `/api/users/allcourses`: Get all available courses
+- **GET** `/api/users/courses`: Get courses for the current user
+- **GET** `/api/users/coursesprogress`: Get user courses with completion status
+- **GET** `/api/users/enroll`: Enroll user in a course
+- **GET** `/api/users/performance`: Get learner performance analytics
+- **GET** `/api/users/categories`: Get all course categories
+- **PUT** `/api/users/first-login-complete`: Mark first login complete
+
+#### Coach API
+- **GET** `/api/users/coach/courses/:userId`: Get courses coached by a user
+- **GET** `/api/users/coach/students/:courseId`: Get students enrolled in a course
+- **GET** `/api/users/coach/students`: Get all students from coach courses with details
+
+#### Course Completion API
+- **GET** `/api/completion/module-progress/:courseId`: Get completed modules for a course
+- **POST** `/api/completion/complete-module`: Mark a module as complete
+- **GET** `/api/completion/course-progress/:courseId`: Get overall course progress
+- **GET** `/api/completion/activities/:courseId/:userId`: Get all activity completion statuses in a course
+- **GET** `/api/completion/course/:courseId/:userId`: Get course completion status
+- **POST** `/api/completion/course/self-complete`: Mark a course as self-completed
+- **POST** `/api/completion/activity/update`: Update an activity's completion status manually
+
+### Recommendation API
+
+Available at `http://localhost:8000/docs` when the FastAPI server is running. See the detailed [Recommendation Engine Documentation](/code/recommendation-engine/README.md) for comprehensive API information.
 
 ## Project Structure
 
